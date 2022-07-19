@@ -15,10 +15,11 @@ const input = document.querySelector('.form-control');
 
 input.focus();
 
-input.addEventListener('blur', () => {
+input.addEventListener('input', () => {
   if (input.value.trim() !== '') {
     setTimeout(() => {
       p.textContent = input.value;
+      clearTimeout();
     }, 300);
   } else {
     input.value = '';
